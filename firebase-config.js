@@ -1,7 +1,3 @@
-// Firebase config para órdenes de trabajo
-import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
-
 const firebaseConfig = {
   apiKey: "AIzaSyC80hM7mF-ImkvHePOLwPFL2N7xDqSUURA",
   authDomain: "ordenes-trabajo-a8499.firebaseapp.com",
@@ -11,7 +7,5 @@ const firebaseConfig = {
   appId: "1:922107148938:web:b83f6923e98e9d42224b73"
 };
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-
-export { db };
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();

@@ -39,3 +39,16 @@ h1 {
 .btn:hover {
   background: #4a148c;
 }
+
+.checkbox-group {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.card {
+  background: #f1f1f1;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: left;
+}
