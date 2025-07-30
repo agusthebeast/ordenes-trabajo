@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Crear Orden de Trabajo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Crear Orden</h1>
+
+    <form id="orden-form">
+      <label>Cliente:</label>
+      <div class="combo-input">
+        <input type="text" id="buscar-cliente" placeholder="Buscar cliente..." autocomplete="off" />
+        <button type="button" id="nuevo-cliente">+ Nuevo</button>
+      </div>
+      <select id="cliente-select" required></select>
+
+      <label>Equipo:</label>
+      <div class="combo-input">
+        <input type="text" id="buscar-equipo" placeholder="Buscar equipo..." autocomplete="off" />
+        <button type="button" id="nuevo-equipo">+ Nuevo</button>
+      </div>
+      <select id="equipo-select" required></select>
+
+      <label>Accesorios entregados:</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" value="Cable de alimentación"> Cable de alimentación</label>
+        <label><input type="checkbox" value="Control remoto"> Control remoto</label>
+        <label><input type="checkbox" value="Base o pie"> Base o pie</label>
+        <label><input type="checkbox" value="Fuente de alimentación externa"> Fuente externa</label>
+        <label><input type="checkbox" value="Soporte de pared"> Soporte de pared</label>
+      </div>
+
+      <label>Falla:</label>
+      <textarea id="falla" required></textarea>
+
+      <label>Observaciones (opcional):</label>
+      <textarea id="observaciones"></textarea>
+
+      <label>¿Tiene garantía?</label>
+      <select id="garantia" required>
+        <option value="true">Sí</option>
+        <option value="false">No</option>
+      </select>
+
+      <label>Plazo estimado de revisión:</label>
+      <input type="date" id="plazo" required />
+
+      <button type="submit" class="btn">Guardar orden</button>
+      <a href="index.html" class="btn" style="background: #aaa;">Volver</a>
+    </form>
+  </div>
+
+  <script type="module" src="firebase-config.js"></script>
+  <script type="module" src="utils.js"></script>
+  <script type="module" src="crear.js"></script>
+</body>
+</html>
