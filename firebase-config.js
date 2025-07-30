@@ -1,4 +1,4 @@
-// firebase-config.js – SIN IMPORT, solo para navegador con CDN
+// firebase-config.js (sin imports, usando Firebase compat desde CDN)
 const firebaseConfig = {
   apiKey: "AIzaSyC80hM7mF-ImkvHePOLwPFL2N7xDqSUURA",
   authDomain: "ordenes-trabajo-a8499.firebaseapp.com",
@@ -9,4 +9,4 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
-window.db = firebase.firestore(); // exportamos db como global
+const db = firebase.firestore();

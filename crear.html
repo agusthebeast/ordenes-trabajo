@@ -5,12 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Crear Orden</title>
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Firebase desde CDN -->
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
 </head>
 <body>
   <div class="container">
     <h1>Crear Orden</h1>
+
     <form id="orden-form">
       <label>Cliente:</label>
       <input type="text" id="cliente-select" required />
@@ -18,7 +21,7 @@
       <label>Equipo:</label>
       <input type="text" id="equipo-select" required />
 
-      <label>Accesorios entregados:</label>
+      <label>Accesorios:</label>
       <div class="checkbox-group">
         <label><input type="checkbox" value="Cable de alimentación"> Cable de alimentación</label>
         <label><input type="checkbox" value="Control remoto"> Control remoto</label>
@@ -43,7 +46,7 @@
       <input type="date" id="plazo" required />
 
       <button type="submit" class="btn">Guardar</button>
-      <a href="index.html" class="btn" style="background:#aaa;">Volver</a>
+      <a href="index.html" class="btn" style="background: #aaa;">Volver</a>
     </form>
   </div>
 

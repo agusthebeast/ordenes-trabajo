@@ -20,7 +20,12 @@ document.getElementById("orden-form").addEventListener("submit", async e => {
     }
   };
 
-  await db.collection("ordenes").add(orden);
-  alert("Orden guardada");
-  window.location.href = "index.html";
+  try {
+    await db.collection("ordenes").add(orden);
+    alert("Orden guardada");
+    window.location.href = "index.html";
+  } catch (error) {
+    console.error("Error al guardar orden:", error);
+    alert("Error al guardar la orden.");
+  }
 });
