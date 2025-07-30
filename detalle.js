@@ -1,7 +1,3 @@
-import { db } from "./firebase-config.js";
-import { doc, updateDoc, getDoc } from "firebase/firestore";
-import { subirImagenCloudinary } from "./cloudinary.js";
-
 const params = new URLSearchParams(window.location.search);
 const ordenId = params.get("id");
 
@@ -10,13 +6,15 @@ const precioInput = document.getElementById("precio");
 const fotoInput = document.getElementById("foto");
 const form = document.getElementById("detalle-form");
 
-async function cargarDetalle() {
-  const ref = doc(db, "ordenes", ordenId);
-  const snap = await getDoc(ref);
-  if (snap.exists()) {
-    const data = snap.data();
-    obsInput.value = data.detallesTecnico?.observaciones || "";
-    precioInput.value = data.detallesTecnico?.precio || 0;
+async function cargarDatos() {
+  const docRef = db.collection("ordenes").doc(ordenId);
+  const docSnap = await docRef.get();
+
+  if (docSnap.exists) {
+    const data = docSnap.data();
+    const detalles = data.detallesTecnico || {};
+    obsInput.value = detalles.observaciones || "";
+    precioInput.value = detalles.precio || "";
   }
 }
 
@@ -35,11 +33,10 @@ form.addEventListener("submit", async e => {
     imagen: imagenURL
   };
 
-  const ref = doc(db, "ordenes", ordenId);
-  await updateDoc(ref, { detallesTecnico: detalles });
+  await db.collection("ordenes").doc(ordenId).update({ detallesTecnico: detalles });
 
   alert("Detalle técnico guardado");
   window.location.href = "ver.html";
 });
 
-cargarDetalle();
+cargarDatos();

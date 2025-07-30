@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Detalle Técnico</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
 </head>
 <body>
   <div class="container">
@@ -21,12 +23,12 @@
       <input type="file" id="foto" accept="image/*" />
 
       <button type="submit" class="btn">Guardar</button>
-      <a href="ver.html" class="btn" style="background: #aaa;">Volver</a>
+      <a href="ver.html" class="btn" style="background:#aaa;">Volver</a>
     </form>
   </div>
 
-  <script type="module" src="firebase-config.js"></script>
-  <script type="module" src="cloudinary.js"></script>
-  <script type="module" src="detalle.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="cloudinary.js"></script>
+  <script src="detalle.js"></script>
 </body>
 </html>

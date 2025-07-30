@@ -21,7 +21,6 @@ document.getElementById("orden-form").addEventListener("submit", async e => {
   };
 
   await db.collection("ordenes").add(orden);
-
   alert("Orden guardada");
   window.location.href = "index.html";
 });
